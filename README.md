@@ -10,7 +10,7 @@ Department of Transportation.
 Obtaining the Data
 ------------------
 File a Freedom of Information Law (FOIL) request with NYSDOT to get
-a dump of ALIS data
+a dump of ALIS data.
 
 They will send you one or more Excel files.  Manually export each file
 into .csv format.  Place those .csv files in the `csv` directory of this
