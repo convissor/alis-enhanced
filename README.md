@@ -3,7 +3,7 @@ ALIS Enhanced
 
 Overview
 --------
-Creates an SQLite Database of motor vehicle crash data obtained from the
+Creates an SQLite database of motor vehicle crash data obtained from the
 Accident Location Information System (ALIS) run by New York State's
 Department of Transportation.
 
