@@ -14,28 +14,25 @@ if [[ -f 'alis-enhanced.sqlite3' ]] ; then
 fi
 
 rm alis-enhanced.sqlite3
-rm -f csv/raw.csv
-rm -f csv/tmp.csv
+rm -f csv/raw
 rm -f csv/gps.csv
 
 
 # Import the CSV files
 
+cp csv/headers.txt csv/raw
+
 IFS_ORIG=$IFS
 IFS=$(echo -en "\n\b")
 for file in $(ls csv/*.csv) ; do
-	cat "$file" >> csv/tmp.csv
+	tail -n +2 "$file" >> csv/raw
 done
 IFS=$IFS_ORIG
 
-cp csv/headers.txt csv/raw.csv
-cat csv/tmp.csv >> csv/raw.csv
-rm csv/tmp.csv
-
 echo ".mode csv
-.import csv/raw.csv raw" | sqlite3 alis-enhanced.sqlite3
+.import csv/raw raw" | sqlite3 alis-enhanced.sqlite3
 
-rm csv/raw.csv
+rm csv/raw
 
 echo "Imported main csv file"
 
@@ -51,7 +48,7 @@ rm csv/gps.csv
 echo "Imported GPS csv file"
 
 sqlite3 alis-enhanced.sqlite3 < schema-crash.sql
-echo "Converted data into crash table"
+echo "Copied data into crash table"
 
 sqlite3 alis-enhanced.sqlite3 < corrections.sql
 echo "Corrected data"
