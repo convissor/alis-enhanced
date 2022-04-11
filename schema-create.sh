@@ -53,7 +53,7 @@ echo "Copied data into crash table"
 sqlite3 alis-enhanced.sqlite3 < corrections.sql
 echo "Corrected data"
 
-./standardize-streets.sh
+./schema-standardize-streets.sh
 echo "Standardized street names"
 
 echo "DONE"

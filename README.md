@@ -26,7 +26,7 @@ In crash reports, police officers put any street name they feel like.
 For example, the same street may be entered as "US Hwy 9", "[Route] 9",
 "N Broadway", or "Broadway".
 
-You can normalize the street names in `standardize-streets.sh`.
+You can normalize the street names in `schema-standardize-streets.sh`.
 
 Using the Database
 ------------------

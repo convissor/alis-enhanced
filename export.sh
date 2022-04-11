@@ -1,9 +1,9 @@
 #! /bin/bash -e
 
 function usage() {
-	echo "Extract all fields from your crash database in CSV format"
+	echo "Extract all columns from the crash database"
 	echo ""
-	echo "Usage: $0 [municipality]"
+	echo "Usage: $0 [municipality (Title Case)]"
 }
 
 if [[ $1 == "-h" || $1 == "--help" || $1 == "help" ]] ; then

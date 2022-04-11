@@ -13,6 +13,11 @@
 ./function-standardize-street-by-name.sh "Tarrytown" "us 9" "us hwy 9" "[route] 9" "n broadway" "s broadway" "broadway"
 ./function-standardize-street-by-name.sh "Tarrytown" "ny 119" "state hwy 119" "[route] 119" "119" "white plains rd"
 ./function-standardize-street-by-name.sh "Tarrytown" "i 87" "[route] 87" "i 287" "[route] 287" "new york state trwy"
+./function-standardize-street-by-name.sh "Tarrytown" "elizabeth st" "w elizabeth st" "e elizabeth st"
+./function-standardize-street-by-name.sh "Tarrytown" "franklin st" "w franklin st" "e franklin st"
+./function-standardize-street-by-name.sh "Tarrytown" "washington st" "n washington st" "s washington st"
+./function-standardize-street-by-name.sh "Tarrytown" "sunnyside ln" "west sunnyside la" "east sunnyside la" "e sunnyside ln"
+./function-standardize-street-by-name.sh "Tarrytown" "main st / neperan rd" "main st" "neperan rd" "main-neperan sts"
 
 ./function-standardize-street-by-name.sh "Greenburgh" "ny 119" "state hwy 119" "[route] 119" "119" "white plains rd" "tarrytown rd"
 ./function-standardize-street-by-name.sh "Greenburgh" "i 87" "[route] 87" "new york state trwy"

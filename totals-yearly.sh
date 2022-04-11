@@ -1,9 +1,9 @@
 #! /bin/bash -e
 
 function usage() {
-	echo "Extract yearly totals of ped/bike involved crashes in CSV format"
+	echo "Extract yearly totals of all crashes"
 	echo ""
-	echo "Usage: $0 [municipality]"
+	echo "Usage: $0 [municipality (Title Case)]"
 }
 
 if [[ $1 == "-h" || $1 == "--help" || $1 == "help" ]] ; then
@@ -17,15 +17,15 @@ sql="
 SELECT
 	year,
 	COUNT(*) AS crash,
+	SUM(num_of_injuries) AS injury,
 	SUM(num_of_injuries) - SUM(num_serious_injuries) AS minor_injury,
 	SUM(num_serious_injuries) AS serious_injury,
 	SUM(num_of_fatalities) AS fatality
-FROM crash
-WHERE veh_type_veh_2 IN ('PEDESTRIAN', 'BICYCLE')"
+FROM crash"
 
 if [[ -n "$1" ]] ; then
 	arg=${1//"'"/"''"}
-	sql="$sql AND municipality = '$arg'"
+	sql="$sql WHERE municipality = '$arg'"
 fi
 
 sql="$sql
