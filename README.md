@@ -30,8 +30,9 @@ You can normalize the street names in `schema-standardize-streets.sh`.
 
 Using the Database
 ------------------
-There are some files named `function-*` which can be used to extract
-frequently requested data.
+Use the shell scripts named `totals-*` to calculate commonly requested
+crash count summaries in CSV format.  To learn how a particular script
+works, call it with the `-h` argument.
 
 Or you can run your own SQL queries on the command line.
 To get into the database: `sqlite3 alis-enhanced.sqlite3`
